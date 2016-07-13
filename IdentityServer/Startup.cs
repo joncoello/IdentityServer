@@ -31,7 +31,7 @@ namespace IdentityServer {
 
             // accept access tokens from identityserver and require a scope of 'api1'
             app.UseIdentityServerBearerTokenAuthentication(new IdentityServerBearerTokenAuthenticationOptions {
-                Authority = "http://localhost:19586",
+                Authority = "http://wkidentityserver.azurewebsites.net",
                 ValidationMode = ValidationMode.ValidationEndpoint,
 
                 RequiredScopes = new[] { "api1" }
