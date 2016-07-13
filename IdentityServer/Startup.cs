@@ -22,7 +22,7 @@ namespace IdentityServer {
                 Factory = new IdentityServerServiceFactory()
                            .UseInMemoryClients(Clients.Get())
                            .UseInMemoryScopes(Scopes.Get())
-                           .UseInMemoryUsers(new List<InMemoryUser>()),
+                           .UseInMemoryUsers(Users.Get()),
 
                 RequireSsl = false
             };
@@ -31,7 +31,7 @@ namespace IdentityServer {
 
             // accept access tokens from identityserver and require a scope of 'api1'
             app.UseIdentityServerBearerTokenAuthentication(new IdentityServerBearerTokenAuthenticationOptions {
-                Authority = "http://wkidentityserver.azurewebsites.net",
+                Authority = "http://localhost:19586",
                 ValidationMode = ValidationMode.ValidationEndpoint,
 
                 RequiredScopes = new[] { "api1" }
